@@ -1,0 +1,63 @@
+*,
+::ng-deep app-header>*{
+  --padding-x: 14px;
+  --padding-y: 6px;
+  --navbar-width-sm: calc( 50px + var(--padding-x) * 2 );
+  --navbar-width-lg: 200px;
+  --navbar-width: 250px;
+  --advertising-width: 180px;
+  --advertising-width-xs: 60px;
+  --advertising-width-sm: 100px;
+  --advertising-width-lg: 150px;
+  --main-color-r: 21;
+  --main-color-g: 21;
+  --main-color-b: 21;
+  --main-color-rgb: var(--main-color-r), var(--main-color-g), var(--main-color-b);
+  --main-color: rgb(21, 21, 21);
+  --main-color-highlight: rgb(14, 14, 14);
+  --main-color-above: #ffffff;
+}
+.app-container{
+  display: flex;
+}
+.home-section{
+    position: relative;
+    width: calc( 100% - var(--navbar-width-sm));
+}
+.advertising-test{
+  display: none;
+  width: calc( var(--advertising-width-xs) );
+  height: 100%;
+  position: fixed;
+  right: 0%;
+  background-color: blue;
+  box-sizing: border-box;
+}
+
+@media (min-width: 572px) {
+  .home-section{
+      width: calc(100% - var(--navbar-width-sm) - var(--advertising-width-sm));
+  }
+  .advertising-test{
+    display: block;
+    width: calc( var(--advertising-width-sm) - 0.5rem );
+    height: calc( 100% - 0.5rem * 2);
+    margin: 0.5rem ;
+  }
+}
+@media (min-width: 992px) {
+  .home-section{
+      width: calc(100% - var(--navbar-width-sm) - var(--advertising-width-lg));
+  }
+  .advertising-test{
+    width: calc( var(--advertising-width-lg) - 0.5rem );
+  }
+}
+@media (min-width: 1200px) {
+  .home-section{
+      width: calc(100% - var(--navbar-width) - var(--advertising-width));
+  }
+  .advertising-test{
+    width: calc( var(--advertising-width) - 0.5rem );
+  }
+}
