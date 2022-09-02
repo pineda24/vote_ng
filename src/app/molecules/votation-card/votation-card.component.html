@@ -1,1 +1,36 @@
-<p>votation-card works!</p>
+<div class="card votation-card">
+    <div class="votation-card-header">
+        <div class="votation-autor">
+            <div class="votation-autor--image" style="background: {{votationObject.autor.color}}; ">
+                <img [src]="votationObject.autor.picture" alt="{{ votationObject.autor.fullName}} picture.">
+            </div>
+            <label>{{ votationObject.autor.fullName | uppercase }}</label>
+        </div>
+        <div class="votation-options">
+            <ng-template ngFor let-option [ngForOf]="votationObject.optionsList" let-it="index">
+                <img [src]="option.picture" alt="Option {{it}} picture." [style]="{backgroundColor: option.color, zIndex: 30-it}"
+                
+                >
+            </ng-template>
+        </div>
+        <img [src]="votationObject.picture" alt="" class="card-img-top">
+    </div>
+    <div class="card-body">
+        <div class="votation-title">
+            {{votationObject.title}}
+        </div>
+        <div class="votation-information">
+            <div class="votation-datetime">
+                <label for="">Last modification: {{votationObject.datetime.toLocaleDateString()}}</label>
+            </div>
+            <div class="votation-votes-amount">
+                <i class="fa-solid fa-check-to-slot"></i>
+                <label for="">{{votationObject.votesAmount}}</label>
+            </div>
+            <div class="votation-people-amount">
+                <i class="fa-solid fa-people-group"></i>
+                <label for="">{{votationObject.peopleAmount}}</label>
+            </div>
+        </div>
+    </div>
+</div>

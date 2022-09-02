@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="row row-cols-4 g-3">
+    <ng-template ngFor let-votation [ngForOf]="[1,2,3,4,5,6,7,8]">
+        <div class="col">
+            <app-votation-card></app-votation-card>
+        </div>
+    </ng-template>
+</div>

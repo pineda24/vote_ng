@@ -4,6 +4,7 @@
     /* background-image: url("src/assets/temporals/background-1.png"); */
     background-position: top;
     background-size: cover;
+    background-color: var(--color-gray-1);
 }
 
 ::ng-deep *{
@@ -14,10 +15,15 @@
     --color-5: #FF5400;
     --color-6: #FFBD00;
     --color-dark: #232323;
+    --color-gray-1: #F8F9FA;
 }
 .container {
     margin: auto;
     display: flex;
     justify-content: center;
-    width: 60vw;
+    /* max-width: 950px; */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #D5EAEB;
 }
