@@ -3,53 +3,70 @@ header{
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     font-size: 12px;
     padding-bottom: 1rem;
     background-color: var(--color-gray-1);
     box-shadow: 0px 10px 10px 5px  var(--color-gray-1);
     border-radius: 10px;
+    z-index: 100;
+    padding: 0px 1rem;
 }
 .false-header {
     width: 100%;
     height: calc(5rem + 1rem + 20px);
 }
+.header-section-container{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
 .header-section{
     display: flex;
-    justify-content: center;
-    width: 500px;
+    /* justify-content: center; */
     background-color: var(--color-1);
     border-radius: 0px 0px 40px 40px;
     height: 5rem;
+    width: 350px;
 
     box-shadow: 0px 0px 10px 2px rgba(145, 145, 145, 0.38),
                 inset 0px 60px 40px -40px rgba(255, 255, 255, 0.15),
                 inset 0px -10px 20px 20px rgba(124, 63, 255, 0.15);
+
+    position: relative;
 }
 .navigation{
     height: 100%;
-    width: 100%;
-    position: relative;
+    width: fit-content;
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-size: 0.5rem;
+
+    position: absolute;
+    right: -40px;
 }
 .navigation *{
     font-size: 12px;
+    z-index: 10;
 }
 .main-button{
-    border-radius: 0px 40px 0px 40px;
-    height: 190%;
+    border-radius: 40px 0px 40px 0px;
+    height: 100%;
     width: 100%;
     background-color: var(--color-3);
     color: white;
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
     border: 0;
     outline: 0;
-    padding: 0;
     margin: 0;
+    width: fit-content;
+    white-space: nowrap;
+    /* line-break: nowrap; */
+    padding: 0 1.1rem;
+    font-weight: 500;
 }
 .main-button:hover{
     background-color: var(--color-2);
@@ -57,37 +74,40 @@ header{
 .main-button:active,
 .main-button.active{
     background-color: var(--color-2);
-    transform: translateX(-40%);
-    font-weight: 500;
+    transform: translateX(30%);
+    /* font-weight: 500; */
 }
 .app-logo{
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    width: 100%;
     font-size: 12px;
     gap: 10px;
+    padding: 0.5rem;
+
+    width: 50%;
+    position: relative;
 }
 .app-logo *{
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin: 0;
 }
 .app-logo img{
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     object-position: center;
-    
+    object-fit: contain;
 }
 .account{
+    position: relative;
+    gap: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    gap: 5px;
-    right: 1rem;
-    top: 1rem;
-    max-width: 200px;
+    max-width: 150px;
+    height: 100%;
     padding: 6px;
 
     border-radius: 14px;
@@ -106,28 +126,102 @@ header{
     transform: scale(0.98);
 }
 .account-name{
+    display: none;
+
     color: white;
     margin-left: 3px;
     overflow: hidden;
-    display: -webkit-box;
+
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     word-break: break-all;
     font-size: 10px;
 }
 .account img{
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
 }
 .rounded-image-container{
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
     border-radius: 25px;
     /* overflow: hidden; */
     background-color: white;
     border: 1px solid #c1c1c1;
     box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 650px){
+    .header-section{
+        width: 400px;
+    }
+    .account-name{
+        display: -webkit-box;
+    }
+    
+    .account img{
+        height: 25px;
+        width: 25px;
+    }
+
+    .rounded-image-container{
+        height: 25px;
+        width: 25px;
+    }
+}
+@media (min-width: 700px){
+    .header-section{
+        width: 400px;
+    }
+    .account{
+        max-width: 150px;
+    }
+}
+@media (min-width: 780px){
+    .header-section-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+@media (min-width: 990px){
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-section{
+        width: 500px;
+    }
+    .account{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        height: unset;
+        max-width: 200px;
+    }
+    .navigation{
+        left: -40px
+    }
+    .main-button{
+        border-radius: 0px 40px 0px 40px;
+    }
+    .main-button:active,
+    .main-button.active{
+        transform: translateX(-40%);
+    }
+    .app-logo{
+        left: 50%;
+    }
+    
+    .app-logo *{
+        font-size: 1.5rem;
+    }
+    .app-logo img{
+        width: 45px;
+        height: 45px;
+    }
 }
