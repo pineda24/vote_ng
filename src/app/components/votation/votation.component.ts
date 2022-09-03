@@ -10,6 +10,7 @@ export class VotationComponent implements OnInit {
   @Input("votationObject") votationObject:Votation=new Votation();
   selectedOptions!:VotationOption[];
   @ViewChildren("optionDescription") optionDescriptions!:HTMLDivElement[];
+  limitReached:boolean=false;
 
   constructor() { }
 
@@ -19,5 +20,20 @@ export class VotationComponent implements OnInit {
   toogleDisplayDescription(optionDescription: HTMLDivElement){
     console.log(optionDescription)
     optionDescription.classList.toggle('display-cutted');
+  }
+
+  changeOption(index:number){
+    if(this.selectedOptions.length>=this.votationObject.maxOptions){
+      this.limitReached=true;
+      if(this.selectedOptions.length>this.votationObject.maxOptions){
+        this.selectedOptions.pop();
+        return;
+      }
+    }else if(this.selectedOptions.length<this.votationObject.maxOptions){
+      this.limitReached=false;
+    }
+
+    // console.log(this.selectedOptions)
+    this.votationObject.optionsList[index].selected=!this.votationObject.optionsList[index].selected;
   }
 }

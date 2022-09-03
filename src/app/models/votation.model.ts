@@ -83,7 +83,7 @@ export class VotationOption {
     title!:string;
     description!:string;
     votesAmount!:number;
-    value:boolean=false;
+    selected:boolean=false;
 
     constructor(title?:string, color?:string, votesAmount?:number, description?:string,){
         

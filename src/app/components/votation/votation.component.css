@@ -26,6 +26,7 @@
     position: relative;
     height: fit-content;
     border-radius: 100px 10px 10px 100px;
+    overflow: hidden;
     border: 2px solid #ECECEC;
 }
 .option-card-image{
@@ -35,7 +36,7 @@
     height: 11rem;
     object-fit: cover;
     object-position: center;
-    border-radius: 100%;
+    border-radius: 0px 0px 6rem 0px;
     border-top-right-radius: 0;
     /* border: 2px solid #ECECEC; */
     box-shadow: 0px 0px 0px 2px #ECECEC
@@ -52,12 +53,13 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
-    word-break: break-all;
+    /* word-break: break-all; */
 }
 
 .option-description{
     font-size: 0.75rem;
     overflow: hidden;
+    transition: all ease 0.2s;
 }
 .button-display-more{
     display: flex;
@@ -69,7 +71,7 @@
     border: none;
     background: none;
     width: 100%;
-    margin-bottom: calc(22px + 0.75rem);
+    margin-bottom: calc(22px + 0.5rem);
 }
 .button-display-more svg{
     transition: all ease 0.2s;
@@ -90,12 +92,25 @@
 .option-card-footer{
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    font-size: 12px;
     position: absolute;
     bottom: 0;
     width: calc(100% - 1.5rem);
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;
+}
+.option-checkbox{
+    font-weight: 700;
+    color: var(--color-4);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+}
+::ng-deep .p-checkbox,
+::ng-deep .p-checkbox .p-checkbox-box {
+    width: 20px;
+    height: 20px;
 }
 ::ng-deep .p-checkbox-box{
     border: 2px solid var(--color-4)!important;
