@@ -1,1 +1,33 @@
-<p>votation works!</p>
+<h2>Subject: {{votationObject.title}}</h2>
+<div class="row row-cols-2">
+    <div class="col options-container">
+        <div class="options-style-bar"></div>
+        <div class="options-style-bar"></div>
+        <ng-template ngFor let-votateOption [ngForOf]="votationObject.optionsList" let-it>
+            <div class="option-card-container">
+                <img class="option-card-image" [src]="votateOption.picture" alt="Option {{it}} picture." [style]="{backgroundColor: votateOption.color}">
+                <div class="option-card-content">
+                    <div class="option-title">
+                        {{votateOption.title}}
+                    </div>
+                    <div class="option-description">
+                        {{votateOption.description}}
+                    </div>
+                    <div class="button-display-more"></div>
+                    <div class="option-card-footer">
+                        <div class="option-checkbox">
+                            <input type="checkbox" name="votateOption" id="{{it}}" value="{{votateOption.value}}">
+                        </div>
+                        <div class="votation-votes-amount">
+                            <i class="fa-solid fa-check-to-slot"></i>
+                            <label for="">{{votateOption.votesAmount}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+    <div class="col">
+        
+    </div>
+</div>

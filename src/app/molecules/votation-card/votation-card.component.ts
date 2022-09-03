@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { VotationCard } from 'src/app/models/Votation.model';
+import { VotationCard } from 'src/app/models/votation.model';
 
 @Component({
   selector: 'app-votation-card',

@@ -8,9 +8,7 @@
         </div>
         <div class="votation-options">
             <ng-template ngFor let-option [ngForOf]="votationObject.optionsList" let-it="index">
-                <img [src]="option.picture" alt="Option {{it}} picture." [style]="{backgroundColor: option.color, zIndex: 30-it}"
-                
-                >
+                <img [src]="option.picture" alt="Option {{it}} picture." [style]="{backgroundColor: option.color, zIndex: 30-it}">
             </ng-template>
         </div>
         <img [src]="votationObject.picture" alt="" class="card-img-top">

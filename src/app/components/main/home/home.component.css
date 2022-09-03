@@ -1,0 +1,10 @@
+.home-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    /* max-width: 950px; */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #D5EAEB;
+}
