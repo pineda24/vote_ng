@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Votation } from 'src/app/models/votation.model';
+import { Component, ElementRef, Input, OnInit, ViewChildren } from '@angular/core';
+import { Votation, VotationOption } from 'src/app/models/votation.model';
 
 @Component({
   selector: 'app-votation',
@@ -8,10 +8,16 @@ import { Votation } from 'src/app/models/votation.model';
 })
 export class VotationComponent implements OnInit {
   @Input("votationObject") votationObject:Votation=new Votation();
+  selectedOptions!:VotationOption[];
+  @ViewChildren("optionDescription") optionDescriptions!:HTMLDivElement[];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toogleDisplayDescription(optionDescription: HTMLDivElement){
+    console.log(optionDescription)
+    optionDescription.classList.toggle('display-cutted');
+  }
 }

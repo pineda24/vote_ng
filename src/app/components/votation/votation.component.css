@@ -26,7 +26,7 @@
     position: relative;
     height: fit-content;
     border-radius: 100px 10px 10px 100px;
-    border: 1px solid rgba(0, 0, 0, 0.18);
+    border: 2px solid #ECECEC;
 }
 .option-card-image{
     /* float: left; */
@@ -37,6 +37,8 @@
     object-position: center;
     border-radius: 100%;
     border-top-right-radius: 0;
+    /* border: 2px solid #ECECEC; */
+    box-shadow: 0px 0px 0px 2px #ECECEC
 }
 .option-card-content{
     padding: 0.75rem;
@@ -46,13 +48,44 @@
     font-weight: 700;
     font-size: 1rem;
 }
+.option-description.display-cutted{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    word-break: break-all;
+}
+
 .option-description{
     font-size: 0.75rem;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    word-break: break-all;
+}
+.button-display-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    margin-bottom: calc(22px + 0.75rem);
+}
+.button-display-more svg{
+    transition: all ease 0.2s;
+}
+.button-display-more:hover {
+    box-shadow: 0px 1px 1px 1px #ECECEC;
+    /* background-color: #f1fcff; */
+}
+.button-display-more:focus-visible {
+    border: none;
+    outline: none;
+    box-shadow: inset 0px 0px 1px 1px #b6b6b6;
+}
+.button-display-more:hover svg{
+    transform: scale(1.05) translateY(1px);
+    transform-origin: center;
 }
 .option-card-footer{
     display: flex;
@@ -63,4 +96,12 @@
     width: calc(100% - 1.5rem);
     margin-right: 0.75rem;
     margin-bottom: 0.75rem;
+}
+::ng-deep .p-checkbox-box{
+    border: 2px solid var(--color-4)!important;
+    border-radius: 4px!important;
+}
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #3B82F6;
+    background: var(--color-4)!important;
 }
