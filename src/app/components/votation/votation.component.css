@@ -1,3 +1,8 @@
+.title-votation{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: normal;
+}
 .options-container{
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.18);
@@ -25,7 +30,7 @@
     display: flex;
     position: relative;
     height: fit-content;
-    border-radius: 100px 10px 10px 100px;
+    border-radius: 6rem 10px 10px 6rem;
     overflow: hidden;
     border: 2px solid #ECECEC;
 }
@@ -42,12 +47,13 @@
     box-shadow: 0px 0px 0px 2px #ECECEC
 }
 .option-card-content{
-    padding: 0.75rem;
+    padding: 0.75rem 1rem;
     position: relative;
 }
 .option-title{
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
 }
 .option-description.display-cutted{
     display: -webkit-box;
