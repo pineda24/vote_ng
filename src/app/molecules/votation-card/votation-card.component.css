@@ -18,9 +18,12 @@
     background-color: #f3fcfe;
 }
 .card:hover .votation-autor {
-    
     box-shadow: 0px 0px 0px 2px #96caf4;
     background-color: rgb(243, 252, 254, 0.90);
+}
+
+.card:hover .card-body {
+    box-shadow: inset 0px 2px 0px 0px #96caf4;
 }
 .votation-autor {
     background-color: rgba(255, 255, 255, 0.90);
