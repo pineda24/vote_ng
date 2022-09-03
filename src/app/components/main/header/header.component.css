@@ -39,7 +39,7 @@ header{
 }
 .navigation{
     height: 100%;
-    width: fit-content;
+    width: calc(50% + 40px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -52,30 +52,72 @@ header{
     font-size: 12px;
     z-index: 10;
 }
+
 .main-button{
     border-radius: 40px 0px 40px 0px;
     height: 100%;
     width: 100%;
+    /* width: fit-content; */
     background-color: var(--color-3);
+    background-image: radial-gradient(100% 100% at 100% 0, #8d059c 0, var(--color-3) 100%);
     color: white;
     transition: all ease 0.3s;
     border: 0;
     outline: 0;
     margin: 0;
-    width: fit-content;
     white-space: nowrap;
-    /* line-break: nowrap; */
     padding: 0 1.1rem;
     font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    
+    box-shadow: #8d059c 0 -3px 0 inset;
 }
-.main-button:hover{
+
+.main-button.first-button{
+    background-image: radial-gradient(100% 100% at 100% 0, #841cca 0, var(--color-2) 100%);
     background-color: var(--color-2);
+    left: -40px;
+    /* transform: translateX(30%); */
 }
-.main-button:active,
+
+.main-button:focus:not(.active) {
+    box-shadow: #8d059c 0 0 0 1.5px inset,
+                rgba(45, 35, 66, .4) 0 2px 4px,
+                rgba(45, 35, 66, .3) 0 7px 13px -3px,
+                #8d059c 0 -3px 0 inset;
+}
 .main-button.active{
-    background-color: var(--color-2);
-    transform: translateX(30%);
-    /* font-weight: 500; */
+    background-image: radial-gradient(30% 100% at -10% 50%, white 0, var(--color-3) 100%);
+    cursor: auto;
+}
+.main-button.first-button.active{
+    background-image: radial-gradient(30% 100% at -10% 50%, white 0, var(--color-2) 100%);
+}
+.main-button:hover:not(.active){
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #8d059c 0 -3px 0 inset;
+    transform: scale(1.02);
+}
+.first-button:hover:not(.active){
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #841cca 0 -3px 0 inset;
+}
+.main-button:active:not(.active) {
+    box-shadow: #4c0354 0 3px 7px inset;
+    transform: translateY(1px);
 }
 .app-logo{
     display: flex;
@@ -194,7 +236,7 @@ header{
         align-items: center;
     }
     .header-section{
-        width: 500px;
+        width: 450px;
     }
     .account{
         position: absolute;
@@ -209,9 +251,9 @@ header{
     .main-button{
         border-radius: 0px 40px 0px 40px;
     }
-    .main-button:active,
-    .main-button.active{
-        transform: translateX(-40%);
+    .main-button.first-button{
+        left: -80px;
+        /* transform: translateX(-40%); */
     }
     .app-logo{
         left: 50%;

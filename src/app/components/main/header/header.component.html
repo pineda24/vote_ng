@@ -2,8 +2,14 @@
     <div class="header-section-container">
         <div class="header-section">
             <div class="navigation">
-                <button class="main-button first-button">Administration of my votations</button>
-                <button class="main-button second-button">My participation on votations</button>
+                <button class="button-29 main-button first-button {{isFirstActive?'active':''}}"
+                [disabled]="isFirstActive"  (click)="navigate()">
+                    Administration of my votations
+                </button>
+                <button class="button-29 main-button second-button {{!isFirstActive?'active':''}}"
+                [disabled]="!isFirstActive" (click)="navigate()">
+                    My participation on votations
+                </button>
             </div>
             <div class="app-logo">
                 <h1 class="title-1">
