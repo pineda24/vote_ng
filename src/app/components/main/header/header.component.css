@@ -91,7 +91,7 @@ header{
 .main-button.first-button{
     background-image: radial-gradient(100% 100% at 100% 0, #841cca 0, var(--color-2) 100%);
     background-color: var(--color-2);
-    left: -40px;
+    left: 60px;
     /* transform: translateX(30%); */
 }
 
