@@ -7,6 +7,8 @@ import { HomeComponent } from './components/main/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { HeaderComponent } from './components/main/header/header.component';
 import { VotationCardComponent } from './molecules/votation-card/votation-card.component';
+import { CreateVotationComponent } from './components/votation/create-votation/create-votation.component';
+import { VotationComponent } from './components/votation/votation.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { VotationCardComponent } from './molecules/votation-card/votation-card.c
     MainComponent,
     HeaderComponent,
     VotationCardComponent,
+    CreateVotationComponent,
+    VotationComponent,
   ],
   imports: [
     BrowserModule,

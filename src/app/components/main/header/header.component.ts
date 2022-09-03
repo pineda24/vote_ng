@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,28 @@ export class HeaderComponent implements OnInit {
 
   isFirstActive:boolean=true;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+  ) {
+    /* this.route.queryParams.subscribe(params=>{
+      this.
+    }) */
+  }
 
   ngOnInit(): void {
   }
 
-  navigate(){
+  navigate(
+    button:number//1 for Administration button, 2 for My participations button
+  ){
     this.isFirstActive=!this.isFirstActive;
     console.log(this.isFirstActive)
+    if(button==1){
+      // this.router.navigate(["my-votations"])
+    }else if(button==2){
+      console.log("navigation")
+      // this.router.navigate(["home"])
+    }
   }
 }

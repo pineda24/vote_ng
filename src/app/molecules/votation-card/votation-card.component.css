@@ -7,6 +7,20 @@
 }
 .card-body {
     padding: 0.75rem;
+    transition: all ease 0.1s;
+    transform-origin: center;
+}
+.card:hover{
+    transform: scale(1.01);
+    /* border: 1px solid rgb(143, 183, 215); */
+    /* background-image: radial-gradient(50% 50% at 100% 100%, #fbffed 0, #f3fcfe 100%); */
+    box-shadow: 0px 0px 0px 2px #96caf4;
+    background-color: #f3fcfe;
+}
+.card:hover .votation-autor {
+    
+    box-shadow: 0px 0px 0px 2px #96caf4;
+    background-color: rgb(243, 252, 254, 0.90);
 }
 .votation-autor {
     background-color: rgba(255, 255, 255, 0.90);

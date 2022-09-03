@@ -2,14 +2,15 @@
     <div class="header-section-container">
         <div class="header-section">
             <div class="navigation">
-                <button class="button-29 main-button first-button {{isFirstActive?'active':''}}"
-                [disabled]="isFirstActive"  (click)="navigate()">
+                <button class="button-29 main-button first-button" [routerLink]="['/my-votations']"
+                [disabled]="rla.isActive" (click)="navigate(1)" routerLinkActive="active" #rla="routerLinkActive">
                     Administration of my votations
                 </button>
-                <button class="button-29 main-button second-button {{!isFirstActive?'active':''}}"
-                [disabled]="!isFirstActive" (click)="navigate()">
+                <button class="button-29 main-button second-button" [routerLink]="['/home']" 
+                [disabled]="rla2.isActive" (click)="navigate(2)" routerLinkActive="active" #rla2="routerLinkActive">
                     My participation on votations
                 </button>
+                
             </div>
             <div class="app-logo">
                 <h1 class="title-1">
