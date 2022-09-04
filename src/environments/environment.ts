@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  version: "1.5.4",
+  serverBaseURL: "http://localhost:3000",
+  api: '/api',
+  apiKey: 'AIzaSyBlkBbM5C9xUcgJEskpGqPx3s3n_OYwzbU',
+  bingMapsApiKey: 'Auze7JyqbPqM8O48bRnBBYyzr25Z6LlTY87rncRukaWpGCdOVYL5lDPA984VpiW3',
 };
 
 /*
