@@ -34,7 +34,8 @@
               "node_modules/primeng/resources/primeng.min.css"
             ],
             "scripts": [
-              "src/assets/scripts/bootstrap.bundle.min.js"
+              "src/assets/scripts/bootstrap.bundle.min.js",
+              "node_modules/chart.js/dist/chart.js"
             ]
           },
           "configurations": {

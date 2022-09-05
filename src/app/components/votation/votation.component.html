@@ -43,7 +43,37 @@
             </ng-template>
         </div>
     </div>
-    <div class="col">
-        
+    <div class="col main-container">
+        <h5 class="m-3">Summary</h5>
+        <div class="col-lg-6">
+            <!-- <p-chart type="pie" [data]="data" [options]="chartOptions"  [style]="{'height': '100px'}"></p-chart> -->
+            <div class="row">
+                <div class="col-lg-8">
+                  <p-chart type="doughnut" [data]="data" [options]="pieOptions"></p-chart>
+                </div>
+                <div class="col-lg-4">
+                  <table
+                    class="table table-responsive card-table table-vcenter table-hover text-nowrap datatable search-results">
+                    <thead>
+                      <tr>
+                        <th>Membresía</th>
+                        <th>Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let type of [1,2]; index as i">
+                        <tr>
+                          <td>{{'type'}}</td>
+                          <td>{{15}}</td>
+                        </tr>
+                      </ng-container>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+        <div class="m-3">
+            <p-chart type="line" height="100px" [data]="basicData" [options]="basicOptions"></p-chart>
+        </div>
     </div>
 </div>

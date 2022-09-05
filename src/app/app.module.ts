@@ -14,6 +14,7 @@ import { VotationComponent } from './components/votation/votation.component';
 // PRIMENG MODULES
 import {CheckboxModule} from 'primeng/checkbox';
 import { OptionCardComponent } from './molecules/option-card/option-card.component';
+import {ChartModule} from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OptionCardComponent } from './molecules/option-card/option-card.compone
     AppRoutingModule,
     FormsModule,
 
-    CheckboxModule
+    CheckboxModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
