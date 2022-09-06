@@ -1,33 +1,53 @@
 <header>
-    <div class="header-section-container">
-        <div class="header-section">
-            <div class="navigation">
-                <button class="button-29 main-button first-button" [routerLink]="['/my-votations']"
-                [disabled]="rla.isActive" (click)="navigate(1)" routerLinkActive="active" #rla="routerLinkActive">
-                    Administration of my votations
-                </button>
-                <button class="button-29 main-button second-button" [routerLink]="['/home']" 
-                [disabled]="rla2.isActive" (click)="navigate(2)" routerLinkActive="active" #rla2="routerLinkActive">
-                    My participation on votations
-                </button>
-                
-            </div>
-            <div class="app-logo">
-                <h1 class="title-1">
-                    It's My Vote
-                </h1>
-                <div class="image-container">
-                    <img class="logo" src="./assets/icons/vote-1.png" alt="Profile picture of UACH">
-                </div>
-    
-            </div>
+  <div class="header-section-container">
+    <div class="header-section">
+      <div class="navigation">
+        <button
+          class="button-29 main-button first-button"
+          [routerLink]="['/my-votations']"
+          [disabled]="rla.isActive"
+          (click)="navigate(1)"
+          routerLinkActive="active"
+          #rla="routerLinkActive"
+        >
+          Administration of my votations
+        </button>
+        <button
+          class="button-29 main-button second-button"
+          [routerLink]="['/home']"
+          [disabled]="rla2.isActive"
+          (click)="navigate(2)"
+          routerLinkActive="active"
+          #rla2="routerLinkActive"
+        >
+          My participation on votations
+        </button>
+      </div>
+      <div class="app-logo">
+        <h1 class="title-1">It's My Vote</h1>
+        <div class="image-container">
+          <img
+            class="logo"
+            src="./assets/icons/vote-1.png"
+            alt="Profile picture of UACH"
+          />
         </div>
+      </div>
     </div>
-    <button class="account">
-        <label class="account-name">Universidad Autónoma de Chihuahua</label>
-        <div class="rounded-image-container">
-            <img src="./assets/temporals/uach-logo.png" alt="Profile picture of UACH">
-        </div>
-    </button>
+  </div>
+  <button class="account">
+    <label class="account-name">Universidad Autónoma de Chihuahua</label>
+    <div class="rounded-image-container">
+      <img
+        src="./assets/temporals/uach-logo.png"
+        alt="Profile picture of UACH"
+      />
+    </div>
+  </button>
+
+  <div class="main-buttons">
+    <!-- <ng-content [select]="mainButtons"></ng-content> -->
+    <img src="src/assets/icons/plus.png" alt="Plus button" />
+  </div>
 </header>
 <div class="false-header"></div>
