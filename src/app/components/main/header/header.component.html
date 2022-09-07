@@ -35,19 +35,21 @@
       </div>
     </div>
   </div>
-  <button class="account">
-    <label class="account-name">Universidad Autónoma de Chihuahua</label>
-    <div class="rounded-image-container">
-      <img
-        src="./assets/temporals/uach-logo.png"
-        alt="Profile picture of UACH"
-      />
-    </div>
-  </button>
-
-  <div class="main-buttons">
+  <div class="buttons-section">
     <!-- <ng-content [select]="mainButtons"></ng-content> -->
-    <img src="src/assets/icons/plus.png" alt="Plus button" />
+    <button class="btn added-button" >
+      <img src="./assets/icons/plus.png" alt="Plus button" routerLink="./votations/create"/>
+    </button>
+    <button class="account">
+      <label class="account-name">Universidad Autónoma de Chihuahua</label>
+      <div class="rounded-image-container">
+        <img
+          src="./assets/temporals/uach-logo.png"
+          alt="Profile picture of UACH"
+        />
+      </div>
+    </button>
   </div>
+
 </header>
 <div class="false-header"></div>

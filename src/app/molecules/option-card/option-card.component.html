@@ -1,1 +1,30 @@
-<p>option-card works!</p>
+<div class="option-card-container">
+    <img class="option-card-image" [src]="optionObject.picture" alt="Option picture." [style]="{backgroundColor: optionObject.color}">
+    <div class="option-card-content">
+        <div class="option-title">
+            {{optionObject.title}}
+        </div>
+        <div class="option-description display-cutted" #optionDescription>
+            {{optionObject.description}}
+        </div>
+        <button class="button-display-more" (click)="toogleDisplayDescription(optionDescription)">
+            <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.3632 0.656392C17.1958 0.47945 16.9253 0.448867 16.7226 0.583975L17 1L16.7226 0.584001L16.7224 0.584128L16.7216 0.584684L16.7181 0.586993L16.7041 0.596313L16.6487 0.633041C16.6 0.665294 16.5282 0.712719 16.4363 0.773145C16.2524 0.894008 15.988 1.06684 15.6664 1.2743C15.023 1.68941 14.1522 2.24228 13.2408 2.79462C12.328 3.34789 11.3813 3.8964 10.5843 4.30509C10.1853 4.50974 9.83202 4.67504 9.54402 4.78799C9.23667 4.90852 9.06396 4.94444 9 4.94444C8.93604 4.94444 8.76333 4.90852 8.45598 4.78799C8.16798 4.67504 7.81472 4.50974 7.41566 4.30509C6.6187 3.8964 5.67205 3.34789 4.75915 2.79462C3.84779 2.24228 2.97699 1.68941 2.33356 1.2743C2.012 1.06684 1.74757 0.894008 1.56369 0.773145C1.47176 0.712719 1.39997 0.665294 1.35127 0.633041L1.2959 0.596313L1.28188 0.586993L1.27841 0.584684L1.27758 0.584128L1.27739 0.584001L1 1L1.27735 0.583975C1.07469 0.448867 0.804158 0.47945 0.636773 0.656392C0.469388 0.833334 0.453858 1.10514 0.6 1.3C2.23046 3.47395 3.91151 5.4923 5.35951 6.97221C6.08242 7.71104 6.75769 8.32648 7.34719 8.76094C7.64189 8.97814 7.92532 9.15771 8.19067 9.28471C8.44999 9.40884 8.72727 9.5 9 9.5C9.27148 9.5 9.5474 9.41051 9.80618 9.28767C10.0707 9.16213 10.3528 8.9845 10.6461 8.76936C11.2327 8.33905 11.9043 7.72858 12.6248 6.99308C14.0679 5.51984 15.749 3.50132 17.4 1.3C17.5461 1.10514 17.5306 0.833334 17.3632 0.656392Z"
+                [style.fill]="optionObject.color"  fill-opacity="1" stroke="#232323" stroke-linejoin="round"/>
+            </svg>
+                
+        </button>
+        <div class="option-card-footer">
+            <div class="option-checkbox">
+                <p-checkbox [(ngModel)]="selectedOptions" [name]="'selectedOptions'" [value]="optionObject" checkboxIcon="fa-solid fa-check" (ngModelChange)="changeOption()" [disabled]="selectedOptions.length >= maxOptions && isSelected===false"></p-checkbox>
+                <label for="selectedOptions">
+                    {{isSelected===true?'CANCEL VOTE':'VOTE'}}
+                </label>
+            </div>
+            <div class="votation-votes-amount">
+                <i class="fa-solid fa-check-to-slot"></i>
+                <label for="">{{optionObject.votesAmount}}</label>
+            </div>
+        </div>
+    </div>
+</div>
