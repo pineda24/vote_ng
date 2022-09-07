@@ -1,1 +1,14 @@
-<p>create-votation works!</p>
+<h6>First add the information of the votation:</h6>
+<section class="bg-container main-information">
+    <div class="main-information-text">
+        <input type="text" class="votation-title" placeholder="Enter the votation title...">
+        <textarea class="votation-description"  name="Description" id="" cols="30" rows="10" placeholder="Enter the votation description..."></textarea>
+    </div>
+    <div class="image-dropzone"></div>
+</section>
+<h6>Now, add the options for the votation:</h6>
+<section class="container">
+    <ng-template ngFor let-option [ngForOf]="[1,2,3,4]">
+        <app-create-option-card></app-create-option-card>
+    </ng-template>
+</section>
