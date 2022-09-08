@@ -116,6 +116,7 @@ export class VotationOption {
         this.picture="https://www.recreoviral.com/wp-content/uploads/2017/07/hechoscuriosos-7.png";
     }
 }
+
 export class VotationAutor {
     type!:string;
     fullName!:string;
