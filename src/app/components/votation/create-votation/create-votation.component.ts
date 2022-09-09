@@ -11,5 +11,13 @@ export class CreateVotationComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+  existFiles: boolean = false;
+  imageChangeEvent(files: File[]) {
+    if (files.length > 0) {
+      this.existFiles = true;
+    } else {
+      this.existFiles = false;
+    }
+  }
 }

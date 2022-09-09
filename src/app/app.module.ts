@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,11 +12,19 @@ import { VotationCardComponent } from './molecules/votation-card/votation-card.c
 import { CreateVotationComponent } from './components/votation/create-votation/create-votation.component';
 import { VotationComponent } from './components/votation/votation.component';
 
+
+// ATOMS
+import { ImageContainerAtom } from './atoms/image-container/image-container.atom';
+
+// MOLECULES
+import { OptionCardComponent } from './molecules/option-card/option-card.component';
+import { CreateOptionCardComponent } from './molecules/create-option-card/create-option-card.component';
+import { ImageInputMolecule } from './molecules/image-input/image-input.molecule';
+
 // PRIMENG MODULES
 import {CheckboxModule} from 'primeng/checkbox';
-import { OptionCardComponent } from './molecules/option-card/option-card.component';
 import {ChartModule} from 'primeng/chart';
-import { CreateOptionCardComponent } from './molecules/create-option-card/create-option-card.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -26,8 +35,14 @@ import { CreateOptionCardComponent } from './molecules/create-option-card/create
     VotationCardComponent,
     CreateVotationComponent,
     VotationComponent,
+
+    // ATOMS
+    ImageContainerAtom,
+
+    // MOLECULES
     OptionCardComponent,
     CreateOptionCardComponent,
+    ImageInputMolecule,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +50,8 @@ import { CreateOptionCardComponent } from './molecules/create-option-card/create
     FormsModule,
 
     CheckboxModule,
+    InputTextareaModule,
+    NgxDropzoneModule,
     ChartModule
   ],
   providers: [],

@@ -2,8 +2,8 @@ h6{
     font-weight: 700;
 }
 .bg-container{
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
@@ -48,10 +48,32 @@ h6{
     background-color: rgba(217, 217, 217, 0.2);
     padding: 0.5rem;
 }
+::ng-deep .votation-description{
+  font-family: 'Poppins', sans-serif !important;
+}
 .image-dropzone{
-    margin-left: 1rem;
-    width: 200px;
-    min-width: 200px;
+    /* margin-left: 1rem; */
+    width: 100%;
+    /* min-width: 200px; */
     height: 200px;
-    background: rgb(198, 198, 198);
+    /* background: rgb(198, 198, 198); */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.image-dropzone>*{
+    width: 100%;
+    height: 100%;
+}
+
+.image-dropzone>molecule-image-input {
+    position: absolute;
+}
+::ng-deep .image-field {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 5px !important;
+    border: none;
 }

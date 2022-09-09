@@ -1,10 +1,30 @@
 <h6>First add the information of the votation:</h6>
-<section class="bg-container main-information">
-    <div class="main-information-text">
-        <input type="text" class="votation-title" placeholder="Enter the votation title...">
-        <textarea class="votation-description"  name="Description" id="" cols="30" rows="10" placeholder="Enter the votation description..."></textarea>
+<section class="bg-container">
+    <div class="row g-3">
+        <div class="col-9">
+            <div class="main-information-text">
+                <input type="text" class="votation-title" placeholder="Enter the votation title...">
+                <textarea class="votation-description" name="Description" id="" rows="7" placeholder="Enter the votation description..." pInputTextarea [autoResize]="true"></textarea>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="image-dropzone">
+                <atom-image-container class="image-field">
+                    <img
+                    src="/assets/icons/picture.png"
+                    />
+                </atom-image-container>
+                <molecule-image-input
+                    [multiple]="false"
+                    [inputStyle]="'fill'"
+                    [message]="'Subir foto para la votacion'"
+                >
+                </molecule-image-input>
+            </div>
+            
+        </div>
     </div>
-    <div class="image-dropzone"></div>
 </section>
 <h6>Now, add the options for the votation:</h6>
 <section class="container">
