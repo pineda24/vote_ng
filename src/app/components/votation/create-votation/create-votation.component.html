@@ -18,7 +18,7 @@
                 <molecule-image-input
                     [multiple]="false"
                     [inputStyle]="'fill'"
-                    [message]="'Subir foto para la votacion'"
+                    [message]="'Upload related picture'"
                 >
                 </molecule-image-input>
             </div>
@@ -26,9 +26,13 @@
         </div>
     </div>
 </section>
-<h6>Now, add the options for the votation:</h6>
+<h6 class="mt-4">Now, add the options for the votation:</h6>
 <section class="container">
-    <ng-template ngFor let-option [ngForOf]="[1,2,3,4]">
-        <app-create-option-card></app-create-option-card>
-    </ng-template>
+    <div class="row row-cols-2">
+        <ng-template ngFor let-option [ngForOf]="[1,2,3,4]">
+            <div class="col">
+                <app-create-option-card></app-create-option-card>
+            </div>
+        </ng-template>
+    </div>
 </section>
