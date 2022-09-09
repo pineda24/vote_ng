@@ -6,6 +6,7 @@
     overflow: hidden;
     border: 2px solid #ECECEC;
     margin-bottom: 1rem;
+    background-color: white;
 }
 .option-card-content{
     padding: 0.75rem 1rem;
@@ -41,7 +42,7 @@
     /* border: none; */
     /* outline: none; */
     background: none;
-    box-shadow: 0px 2px 0px 0px #D5EAEB;
+    box-shadow: 0px 1px 0px 0px #D5EAEB;
     color: #282626;
     /* font-size: 1.25rem; */
     /* font-weight: 700; */
@@ -49,9 +50,9 @@
 }
 .option-title:focus{
     outline: none;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: rgba(217, 217, 217, 0.2);
-    box-shadow: 0px 3px 1px -1px #D5EAEB;
+    box-shadow: 0px 2px 0px 0px #D5EAEB;
 }
 
 
@@ -63,11 +64,11 @@
     min-width: 11rem;
     /* object-fit: cover;
     object-position: center; */
-    border-radius: 0px 0px 6rem 0px;
-    overflow: hidden;
+    /* border-radius: 0px 0px 6rem 0px; */
+    /* overflow: hidden; */
     border-top-right-radius: 0;
     /* border: 2px solid #ECECEC; */
-    box-shadow: 0px 0px 0px 2px #ECECEC
+    /* box-shadow: 0px 0px 0px 2px #ECECEC */
 }
 .image-dropzone{
     /* margin-left: 1rem; */
@@ -91,5 +92,5 @@
     border-radius: 6rem 10px 6rem 6rem!important;
 }
 .option-card-image ::ng-deep .fill-component.image-input-container::after{
-    border-radius: 0px;
+    border-radius: 6rem 0px 6rem 6rem!important;
 }
