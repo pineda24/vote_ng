@@ -1,4 +1,4 @@
-<h6>First add the information of the votation:</h6>
+<h6>First, add the information of the votation:</h6>
 <section class="bg-container">
     <div class="row g-3">
         <div class="col-9">
@@ -36,3 +36,16 @@
         </ng-template>
     </div>
 </section>
+
+<h6 class="mt-4">Now, add the options for the votation:</h6>
+<section class="container">
+    <div class="row row-cols-4">
+        <ng-template ngFor let-option [ngForOf]="[1,2,3,4]">
+            <div class="col">
+                <app-votation-settings-card></app-votation-settings-card>
+            </div>
+        </ng-template>
+    </div>
+</section>
+
+<div class="mb-4 p-4"></div>

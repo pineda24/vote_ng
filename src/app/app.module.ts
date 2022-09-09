@@ -25,6 +25,7 @@ import { ImageInputMolecule } from './molecules/image-input/image-input.molecule
 import {CheckboxModule} from 'primeng/checkbox';
 import {ChartModule} from 'primeng/chart';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import { VotationSettingsCardComponent } from './molecules/votation-settings-card/votation-settings-card.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     OptionCardComponent,
     CreateOptionCardComponent,
     ImageInputMolecule,
+    VotationSettingsCardComponent,
   ],
   imports: [
     BrowserModule,
