@@ -27,11 +27,11 @@ export class HeaderComponent implements OnInit {
     button:number//1 for Administration button, 2 for My participations button
   ){
     this.isFirstActive=!this.isFirstActive;
-    console.log(this.isFirstActive)
+    // console.log(this.isFirstActive)
     if(button==1){
       // this.router.navigate(["my-votations"])
     }else if(button==2){
-      console.log("navigation")
+      // console.log("navigation")
       // this.router.navigate(["home"])
     }
   }

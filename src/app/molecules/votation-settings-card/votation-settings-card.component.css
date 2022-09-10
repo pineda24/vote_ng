@@ -1,0 +1,102 @@
+.settings-card{
+    position: relative;
+    height: fit-content;
+    /* overflow: hidden; */
+    margin-bottom: 1rem;
+    /* padding: 1rem 0.75rem; */
+    /* transition: 0.2s ease all; */
+}
+
+.setting-card-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: fit-content;
+    border-radius: 10px;
+    /* overflow: hidden; */
+    border: 2px solid #ECECEC;
+    padding: 1rem 0.75rem;
+    transition: 0.2s ease all;
+}
+
+.setting-card-container:hover, 
+input[type=radio]:hover+.setting-card-container{
+    transform: scale(1.02);
+    border: 2px solid var(--color-selected-1);
+    box-shadow: 0px 0px 4px 0px var(--color-selected-1);
+    background: var(--color-selected-bg-1);
+}
+ 
+input[type=radio]:checked+.setting-card-container{
+    transform: scale(1.02);
+    border: 2px solid var(--color-selected-2);
+    box-shadow: 0px 0px 4px 0px var(--color-selected-2);
+    background: var(--color-selected-bg-2);
+}
+
+input[type=radio]:hover+.setting-card-container .hr-text::after{
+    background: var(--color-selected-1);
+}
+ 
+input[type=radio]:checked+.setting-card-container .hr-text::after{
+    background: var(--color-selected-2);
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.setting-card-image{
+    /* float: left; */
+    /* width: 130px; */
+    aspect-ratio: 1;
+    height: 11rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    /* border: 2px solid #ECECEC; */
+    box-shadow: inset 0px 0px 4px 0px white;
+}
+.setting-card-content{
+    /* padding: 0.75rem 1rem; */
+    position: relative;
+}
+.hr-text{
+    display: flex;
+}
+.hr-text::after{
+    content: '';
+    width: 100%;
+    position: relative;
+    height: 5px;
+    top: 6px;
+    margin-left: 1rem;
+    border-radius: 0px 5px 0px 5px;
+    background-color: var(--color-gray-2);
+}
+.setting-title{
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+    width: fit-content;
+    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+.setting-description{
+    /* word-break: break-all; */
+}
+
+.setting-description{
+    font-size: 0.75rem;
+    overflow: hidden;
+    transition: all ease 0.2s;
+}

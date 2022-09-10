@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-votation.component.css']
 })
 export class CreateVotationComponent implements OnInit {
+  selectedSettings!:any;
 
   constructor() { }
 
@@ -19,5 +20,9 @@ export class CreateVotationComponent implements OnInit {
     } else {
       this.existFiles = false;
     }
+  }
+
+  testBinding(event:any){
+    // console.log("YEY: ", this.selectedSettings);
   }
 }
