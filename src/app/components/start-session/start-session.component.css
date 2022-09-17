@@ -1,0 +1,56 @@
+.session-container {
+    background-color: #C1314B;
+    border-radius: 25px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+}
+
+.form-container {
+    padding-top: 2rem;
+}
+.form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white!important;
+}
+.form-header h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.form {
+    background: white;
+    border-radius: 40px 40px 0px 0px;
+    padding: 3rem;
+}
+.form-field{
+    margin-bottom: 3rem;
+}
+.form-label {
+    color: #C1C1C1;
+}
+.form-control {
+    background-color: #F8F8F8;
+    font-weight: 700;
+    font-size: large;
+    border: none;
+    border-bottom: 1px solid #C1C1C1;
+    border-top-right-radius: 25px;
+}
+.form-footer { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.button-main {
+    width: 100%;
+    background: var(--color-4);
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 0px 20px 0px 20px;
+}

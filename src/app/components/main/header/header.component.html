@@ -40,7 +40,9 @@
     <button class="btn added-button" >
       <img src="./assets/icons/plus.png" alt="Plus button" routerLink="./votations/create"/>
     </button>
-    <button class="account">
+    <button class="account"
+    [routerLink]="['/account/login']"
+    >
       <label class="account-name">Universidad Autónoma de Chihuahua</label>
       <div class="rounded-image-container">
         <img

@@ -26,6 +26,9 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {ChartModule} from 'primeng/chart';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import { VotationSettingsCardComponent } from './molecules/votation-settings-card/votation-settings-card.component';
+import { StartSessionComponent } from './components/start-session/start-session.component';
+import { LogInComponent } from './components/start-session/log-in/log-in.component';
+import { SignUpComponent } from './components/start-session/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { VotationSettingsCardComponent } from './molecules/votation-settings-car
     CreateOptionCardComponent,
     ImageInputMolecule,
     VotationSettingsCardComponent,
+    StartSessionComponent,
+    LogInComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
