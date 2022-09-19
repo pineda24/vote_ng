@@ -1,24 +1,27 @@
-<div class="container">
+<div class="container start-session-container">
     <div class="session-container">
         <div class="information-container">
-
+            <img src="/assets/img/votation-2.png" alt="Votation picture" class="information-picture">
+            <div class="information-content">
+                <h3>You are your vote, take care with it!</h3>
+            </div>
         </div>
         <div class="form-container">
             <div class="form-header">
                 <label for="" class="">Welcome to</label>
                 <h2>It's my vote</h2>
                 <div class="form-navigation">
-                    <button class="button-login btn btn-primary">
+                    <button class="main-button login-button">
                         Login
                     </button>
-                    <button class="button-login btn btn-primary">
+                    <button class="main-button signup-button">
                         Sign up
                     </button>
                 </div>
             </div>
             <form action="" class="form">
                 <div class="form-field">
-                    <label class="form-label" for="user">User</label>
+                    <label class="form-label" for="user">Username/email</label>
                     <input class="form-control" type="text" id="user">
                 </div>
                 <div class="form-field">
@@ -27,16 +30,18 @@
                 </div>
 
                 <div class="form-footer">
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <div class="mb-3 form-remindme-check">
+                      <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                      <p-checkbox [name]="'selectedOptions'" [id]="'remindMe'" checkboxIcon="fa-solid fa-check" [binary]="true" [(ngModel)]="remindMe"></p-checkbox>
+                      
+                      <label class="form-check-label" for="remindMe">Remind me</label>
                     </div>
-                    <a href="">
+                    <a href="" class="link forgotted">
                         Forgot password or account?
                     </a>
                 </div>
                 <div class="form-buttons">
-                    <button class="button-main btn btn-primary">Login</button>
+                    <button class="form-button-main btn btn-primary">Login</button>
                 </div>
             </form>
         </div>

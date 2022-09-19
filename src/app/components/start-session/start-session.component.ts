@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StartSessionComponent implements OnInit {
 
+  remindMe:boolean=false;
+
   constructor() { }
 
   ngOnInit(): void {
