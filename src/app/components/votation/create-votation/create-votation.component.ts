@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultTypes } from 'src/app/models/resultTypes.model';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-create-votation',
@@ -8,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class CreateVotationComponent implements OnInit {
   selectedSettings!: any;
   fileToUpload: File | null = null;
+  resultTypes: Array<ResultTypes> = [];
 
-  constructor() {}
+  constructor(
+    private data: DataService,
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getResultTypes();
+  }
 
   handleFileInput(files: File) {
     this.fileToUpload = files;
@@ -30,5 +37,13 @@ export class CreateVotationComponent implements OnInit {
 
   testBinding(event: any) {
     // console.log("YEY: ", this.selectedSettings);
+  }
+
+  async getResultTypes() {
+    await this.data.findByParams('/results-types', '').subscribe((res) => {
+      res.forEach((element: ResultTypes) => {
+        this.resultTypes.push(element);
+      });
+    });
   }
 }

@@ -4,13 +4,13 @@
         <div class="setting-card-content">
             <div class="hr-text hr-text-left">
                 <div class="setting-title">
-                    Public
+                    {{resultType?.title}}
                 </div>
             </div>
             <div class="setting-description display-cutted" #settingDescription>
-                Everyone with an account can votate and watch the statistics and people’s votes
+                {{resultType.description}}
             </div>
         </div>
-        <img class="setting-card-image" src="/assets/icons/picture.png" alt="Setting picture.">
+        <img class="setting-card-image" src={{resultType.photo}} alt="Setting picture.">
     </div>
 </div>

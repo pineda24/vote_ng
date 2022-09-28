@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ResultTypes } from 'src/app/models/resultTypes.model';
 
 @Component({
   selector: 'app-votation-settings-card',
@@ -58,6 +59,7 @@ export class VotationSettingsCardComponent implements OnInit {
   @Input('name') name:string='radioInput';
   @Input('settingsValue') settingsValue:any=undefined;
   @Input('selectedSettings') selectedSettings:any=undefined;
+  @Input('resultType') resultType:ResultTypes = new ResultTypes();
   @Output('selectedSettingsChange') selectedSettingsChange=new EventEmitter<any>();
   isSelected=false;
 
