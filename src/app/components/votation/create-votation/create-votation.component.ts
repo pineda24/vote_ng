@@ -3,18 +3,24 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-create-votation',
   templateUrl: './create-votation.component.html',
-  styleUrls: ['./create-votation.component.css']
+  styleUrls: ['./create-votation.component.css'],
 })
 export class CreateVotationComponent implements OnInit {
-  selectedSettings!:any;
+  selectedSettings!: any;
+  fileToUpload: File | null = null;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  handleFileInput(files: File) {
+    this.fileToUpload = files;
+    console.log(this.fileToUpload);
   }
-  
+
   existFiles: boolean = false;
   imageChangeEvent(files: File[]) {
+    // console.log(files[0].stream)
     if (files.length > 0) {
       this.existFiles = true;
     } else {
@@ -22,7 +28,7 @@ export class CreateVotationComponent implements OnInit {
     }
   }
 
-  testBinding(event:any){
+  testBinding(event: any) {
     // console.log("YEY: ", this.selectedSettings);
   }
 }
