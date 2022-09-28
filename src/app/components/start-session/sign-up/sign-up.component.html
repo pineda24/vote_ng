@@ -1,16 +1,16 @@
 <form name="form" #f="ngForm" action="" class="form" (ngSubmit)="f.form.valid && signup()" novalidate>
     <div class="form-field">
         <label class="form-label" for="user">Username/email</label>
-        <input class="form-control" type="text" id="user">
+        <input class="form-control" type="text" id="user" name="email" [(ngModel)]="usersSignup.email">
     </div>
     <div class="form-field">
         <label class="form-label" for="password">Password</label>
-        <input class="form-control" type="password" id="password">
+        <input class="form-control" type="password" id="password" name="password" [(ngModel)]="usersSignup.password">
     </div>
 
     <div class="form-field">
         <label class="form-label" for="password">Confirm password</label>
-        <input class="form-control" type="password" id="password">
+        <input class="form-control" type="password" id="confPassword" name="confPassword" [(ngModel)]="usersSignup.confPassword">
     </div>
 
     <div class="form-buttons">

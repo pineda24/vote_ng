@@ -50,7 +50,7 @@ export class SecurityService {
     return new Observable((observer) => {
       this.http
         .post(
-          environment.serverBaseURL + environment.api + '/users/register',
+          environment.serverBaseURL + '/users/signup',
           obj
         )
         .subscribe(
@@ -60,7 +60,7 @@ export class SecurityService {
             } else {
               observer.next(res);
             }
-            observer.complete();
+            // observer.complete();
           },
           (error) => {
             observer.error(error);

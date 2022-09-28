@@ -1,6 +1,7 @@
 import { BaseModel } from "./baseModel.model";
 
-export class UsersLogIn extends BaseModel {
+export class UsersSignup extends BaseModel {
     email: string = "";
     password: string = "";
+    confPassword: string = "";
 }

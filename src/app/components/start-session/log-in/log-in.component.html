@@ -1,11 +1,11 @@
 <form name="form" #f="ngForm" action="" class="form" (ngSubmit)="f.form.valid && login()" novalidate>
     <div class="form-field">
-        <label class="form-label" for="user">Username/email</label>
-        <input class="form-control" type="text" id="user" [(ngModel)]="usersLogIn.user_name" required>
+        <label class="form-label" for="user">Email</label>
+        <input class="form-control" type="email" name="email" id="email" [(ngModel)]="usersLogIn.email" required>
     </div>
     <div class="form-field">
         <label class="form-label" for="password">Password</label>
-        <input class="form-control" type="password" id="password" [(ngModel)]="usersLogIn.password" required>
+        <input class="form-control" type="password" name="password" id="password" [(ngModel)]="usersLogIn.password" required>
     </div>
 
     <div class="form-footer">

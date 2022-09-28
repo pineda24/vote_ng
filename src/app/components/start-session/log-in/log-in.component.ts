@@ -16,12 +16,9 @@ import { SecurityService } from 'src/app/services/security.service';
 export class LogInComponent implements OnInit {
 
   remindMe: boolean = false;
-  username: string = '';
-  password: string = '';
   keepLogged: boolean = false;
-  errorMessage: string = '';
   isLogin: boolean = false;
-  usersLogIn!: UsersLogIn;
+  usersLogIn: UsersLogIn = new UsersLogIn();
 
   constructor(
     private securityService: SecurityService,
@@ -31,14 +28,12 @@ export class LogInComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    this.errorMessage = '';
     console.log('[LoginComponent][onLogin]');
-    this.errorMessage = '';
     this.isLogin = true;
     console.log(this.usersLogIn);
     this.securityService
       .login({
-        email: this.usersLogIn.user_name,
+        email: this.usersLogIn.email,
         password: this.usersLogIn.password,
         // keepLogged: this.keepLogged,
       })
