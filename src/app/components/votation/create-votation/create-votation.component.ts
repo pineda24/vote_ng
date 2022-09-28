@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Votations } from 'src/app/models/ votations.model';
 import { ResultTypes } from 'src/app/models/resultTypes.model';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,6 +12,7 @@ export class CreateVotationComponent implements OnInit {
   selectedSettings!: any;
   fileToUpload: File | null = null;
   resultTypes: Array<ResultTypes> = [];
+  votations: Votations = new Votations();
 
   constructor(
     private data: DataService,
