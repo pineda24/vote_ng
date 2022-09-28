@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ import { VotationSettingsCardComponent } from './molecules/votation-settings-car
 import { StartSessionComponent } from './components/start-session/start-session.component';
 import { LogInComponent } from './components/start-session/log-in/log-in.component';
 import { SignUpComponent } from './components/start-session/sign-up/sign-up.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { TokenInterceptor } from './services/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -51,18 +54,25 @@ import { SignUpComponent } from './components/start-session/sign-up/sign-up.comp
     StartSessionComponent,
     LogInComponent,
     SignUpComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-
+    HttpClientModule,
     CheckboxModule,
     InputTextareaModule,
     NgxDropzoneModule,
     ChartModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

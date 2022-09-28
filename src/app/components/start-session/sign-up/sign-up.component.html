@@ -1,1 +1,19 @@
-<p>sign-up works!</p>
+<form name="form" #f="ngForm" action="" class="form" (ngSubmit)="f.form.valid && signup()" novalidate>
+    <div class="form-field">
+        <label class="form-label" for="user">Username/email</label>
+        <input class="form-control" type="text" id="user">
+    </div>
+    <div class="form-field">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password">
+    </div>
+
+    <div class="form-field">
+        <label class="form-label" for="password">Confirm password</label>
+        <input class="form-control" type="password" id="password">
+    </div>
+
+    <div class="form-buttons">
+        <button class="form-button-main btn btn-primary">Create account</button>
+    </div>
+</form>

@@ -11,39 +11,18 @@
                 <label for="" class="">Welcome to</label>
                 <h2>It's my vote</h2>
                 <div class="form-navigation">
-                    <button class="main-button login-button">
+                    <button class="main-button login-button" [routerLink]="['/account/login']">
                         Login
                     </button>
-                    <button class="main-button signup-button">
+                    <button class="main-button signup-button" [routerLink]="['/account/signup']">
                         Sign up
                     </button>
                 </div>
             </div>
-            <form action="" class="form">
-                <div class="form-field">
-                    <label class="form-label" for="user">Username/email</label>
-                    <input class="form-control" type="text" id="user">
-                </div>
-                <div class="form-field">
-                    <label class="form-label" for="password">Password</label>
-                    <input class="form-control" type="password" id="password">
-                </div>
-
-                <div class="form-footer">
-                    <div class="mb-3 form-remindme-check">
-                      <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                      <p-checkbox [name]="'selectedOptions'" [id]="'remindMe'" checkboxIcon="fa-solid fa-check" [binary]="true" [(ngModel)]="remindMe"></p-checkbox>
-                      
-                      <label class="form-check-label" for="remindMe">Remind me</label>
-                    </div>
-                    <a href="" class="link forgotted">
-                        Forgot password or account?
-                    </a>
-                </div>
-                <div class="form-buttons">
-                    <button class="form-button-main btn btn-primary">Login</button>
-                </div>
-            </form>
+            <div>
+                <!-- <app-log-in></app-log-in> -->
+                <router-outlet></router-outlet>
+            </div>
         </div>
     </div>
 </div>

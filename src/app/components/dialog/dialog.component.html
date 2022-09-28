@@ -1,0 +1,23 @@
+<div style="margin-bottom: 10px;">
+    <span class="fas fa-exclamation-triangle"></span>
+    <span class="margin-left">Detectamos problemas de pago
+        por lo cual tu ha sido suspendida
+        temporalmente.</span>
+</div>
+<div *ngIf="displayInfo; then contact"></div>
+<ng-template #contact>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Contactanos en:</h5>
+            <span class="fas fa-map-marker-alt fa-fw text-muted"></span>
+            <span class="text-muted small text-truncate margin-left">Calle Rio Aros #410-A Col. Lomas Vallarta</span>
+            <br>
+            <span class="fas fa-phone-alt fa-fw text-muted"></span>
+            <span class="text-muted small text-truncate margin-left">(614)-388-41-85</span>
+        </div>
+    </div>
+</ng-template>
+<div style="float: right">
+    <button type="button" pButton icon="fas fa-info-circle" styleClass="btn btn-block btn-primary" label="Ayuda"
+        (click)="displayInformation();"></button>
+</div>

@@ -7,19 +7,21 @@ import { SignUpComponent } from './components/start-session/sign-up/sign-up.comp
 import { StartSessionComponent } from './components/start-session/start-session.component';
 import { CreateVotationComponent } from './components/votation/create-votation/create-votation.component';
 import { VotationComponent } from './components/votation/votation.component';
+import { SecurityGuard } from './services/security.guard';
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   {
     path: "",
     component: MainComponent,
     children: [
-      { path: "my-votations", component: HomeComponent },
-      { path: "home", component: HomeComponent },
+      { path: "my-votations",  canActivate: [SecurityGuard],component: HomeComponent },
+      { path: "home", canActivate: [SecurityGuard], component: HomeComponent },
       { path: "votations/create", component: CreateVotationComponent },
       { path: "votations/:id", component: VotationComponent },
     ],
   },
   { path: "account", component: StartSessionComponent, children:[
+    { path: "", redirectTo: "login", pathMatch: "full" },
     { path: "login", component: LogInComponent },
     { path: "signup", component: SignUpComponent },
   ] },

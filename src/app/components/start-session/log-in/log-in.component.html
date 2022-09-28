@@ -1,0 +1,25 @@
+<form name="form" #f="ngForm" action="" class="form" (ngSubmit)="f.form.valid && login()" novalidate>
+    <div class="form-field">
+        <label class="form-label" for="user">Username/email</label>
+        <input class="form-control" type="text" id="user" [(ngModel)]="usersLogIn.user_name" required>
+    </div>
+    <div class="form-field">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" [(ngModel)]="usersLogIn.password" required>
+    </div>
+
+    <div class="form-footer">
+        <div class="mb-3 form-remindme-check">
+          <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+          <p-checkbox [name]="'selectedOptions'" [id]="'remindMe'" checkboxIcon="fa-solid fa-check" [binary]="true" [(ngModel)]="remindMe"></p-checkbox>
+          
+          <label class="form-check-label" for="remindMe">Remind me</label>
+        </div>
+        <a href="" class="link forgotted">
+            Forgot password or account?
+        </a>
+    </div>
+    <div class="form-buttons">
+        <button class="form-button-main btn btn-primary">Login</button>
+    </div>
+</form>
