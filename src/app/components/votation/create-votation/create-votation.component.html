@@ -1,4 +1,4 @@
-<form action="">
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveVotation()" novalidate>
   <h6>First, add the information of the votation:</h6>
   <section class="bg-container">
     <div class="row g-3">
@@ -8,6 +8,7 @@
             type="text"
             class="votation-title"
             placeholder="Enter the votation title..."
+            [(ngModel)]="votations.name"
           />
           <textarea
             class="votation-description"
@@ -17,6 +18,7 @@
             placeholder="Enter the votation description..."
             pInputTextarea
             [autoResize]="true"
+            [(ngModel)]="votations.description"
           ></textarea>
         </div>
       </div>
@@ -64,4 +66,16 @@
   </section>
 
   <div class="mb-4 p-4"></div>
+  <div class="d-flex justify-content-end gap-2 mt-3">
+    <button type="submit" class="btn btn-primary">
+        Guardar
+    </button>
+    <button
+        type="button"
+        class="btn btn-link"
+        [routerLink]="['../']"
+    >
+        Cancelar
+    </button>
+  </div>
 </form>
