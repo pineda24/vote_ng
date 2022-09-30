@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Votations } from 'src/app/models/ votations.model';
 import { ResultTypes } from 'src/app/models/resultTypes.model';
 import { DataService } from 'src/app/services/data.service';
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
 
 @Component({
   selector: 'app-create-votation',
@@ -14,6 +19,9 @@ export class CreateVotationComponent implements OnInit {
   imgURLs: any[] = [];
   resultTypes: Array<ResultTypes> = [];
   votations: Votations = new Votations();
+
+  // @ViewChild(‘fileInput’, { static: false })
+ fileInput: ElementRef | undefined;
 
   constructor(
     private data: DataService,
@@ -76,12 +84,26 @@ export class CreateVotationComponent implements OnInit {
     // await this.data.findByFilter('/votations', data).subscribe((res) => {
     //   console.log(res);
     // });
+    const file: File = this.fileToUpload?.[0];
+    var formData: any = new FormData();
+    formData.append('file', file);
 
-    await this.data.findByFilter('/images/upload', this.imgURLs[0]).subscribe((res) => {
+    await this.data.findByFilter('/images/upload', formData).subscribe((res) => {
       console.log(res);
     });
     
   }
+
+  // async attachFile(event: any) {
+  //   const file: File = event.target.files?.[0];
+  //   console.log(file)
+  //   var formData: any = new FormData();
+  //   formData.append('file', file);
+  //   await this.data.fileSend('/images/upload', formData).subscribe((res) => {
+  //     console.log(res);
+  //   });
+  // }
+  
   
   getImgURLs() {
     if (this.fileToUpload.length === 0){

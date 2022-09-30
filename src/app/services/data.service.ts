@@ -31,6 +31,13 @@ export class DataService {
     );
   }
 
+  fileSend(collection: String, params: any) {
+    return this.http.post<any>(
+      environment.serverBaseURL + collection,
+      params
+    );
+  }
+
   findOverduePayments(params: any) {
     return this.http.post<any>(
       environment.serverBaseURL +
