@@ -33,7 +33,7 @@ export class SecurityService {
                 this.currentUser = res['user'];
 
                 localStorage.setItem('thDbbr1sEcZmxHwz', res['token']);
-                console.log(res);
+                //console.log(res);
               }
               observer.next(res);
             }
@@ -115,7 +115,7 @@ export class SecurityService {
   }
 
   getToken() {
-    console.log(localStorage.getItem('thDbbr1sEcZmxHwz'));
+    //console.log(localStorage.getItem('thDbbr1sEcZmxHwz'));
     return localStorage.getItem('thDbbr1sEcZmxHwz');
   }
 
@@ -137,7 +137,7 @@ export class SecurityService {
             password: '1234',
           })
           .toPromise();
-        console.log(res);
+        //console.log(res);
         if (res) {
           this.currentUser = res;
           return this.currentUser;
@@ -154,15 +154,15 @@ export class SecurityService {
 
   async isAuthenticated() {
     let cur = await this.getCurrentUser();
-    console.log("Current user: "+cur);
+    // console.log("Current user: "+cur);
     if (this.currentUser) {
       // this.authenticated = await this.dataService
       //   .findById('/users/activeStatus', this.currentUser._id)
       //   .toPromise();
-      console.log('A');
+      // console.log('A');
       return true;
     } else {
-      console.log('B');
+      // console.log('B');
       return false;
     }
     return this.authenticated;

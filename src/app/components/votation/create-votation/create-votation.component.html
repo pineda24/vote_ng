@@ -29,9 +29,9 @@
           </atom-image-container>
           <molecule-image-input
             [multiple]="false"
-            [inputStyle]="'fill'"
             [message]="'Upload related picture'"
-            (onChangeEvent)="handleFileInput($event)"
+            [(imageFiles)]="fileToUpload"
+            (imageFilesChange)="handleFileInput($event)"
           >
           </molecule-image-input>
         </div>

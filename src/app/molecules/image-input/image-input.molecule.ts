@@ -6,13 +6,65 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./image-input.molecule.css']
 })
 export class ImageInputMolecule implements OnInit {
+  /*
+    Is the component for allow and stylize image dropdowns
+
+    PROPERTIES
+    --------------------------------------------------------------------------------------------------------------
+    | Name             | Default value      | Admitted values     | Description                                  |
+    --------------------------------------------------------------------------------------------------------------
+    | multiple         | false              | boolean             | Set if the dropdown can be used for save     |    
+    |                  |                    |                     | multiple image files                         |
+    --------------------------------------------------------------------------------------------------------------
+    | inputStyle       | 'fill'             | 'fill'              | Is respect to the different styles can be    |
+    |                  |                    |                     | used for the dropdown                        |
+    --------------------------------------------------------------------------------------------------------------
+    | message          | 'Subir imagen'     | string              | Is the message rendered when there are no    |
+    |                  |                    |                     | uploaded image yet                           |
+    --------------------------------------------------------------------------------------------------------------
+    | imageFiles       | []                 | File[]              | [REQUIRED] Is the variable to bind with      |
+    |                  |                    |                     | uploaded images                              |
+    --------------------------------------------------------------------------------------------------------------
+    |                  |                    |                     |                                              |
+    --------------------------------------------------------------------------------------------------------------
+
+    EVENTS
+    -----------------------------------------------------------------------------------------------
+    | Name                   | Parameters          | Description                                  |
+    -----------------------------------------------------------------------------------------------
+    | imageFilesChange       | settingValue        | Callback to invoke on image files changes.   |
+    |                        |                     | Return the image files.                      |
+    -----------------------------------------------------------------------------------------------
+    |                        |                     |                                              |
+    -----------------------------------------------------------------------------------------------
+
+    USAGE EXAMPLES:
+    
+    ---------------------------------------------------------------------------------------------------------
+      <molecule-image-input
+        [multiple]="true"
+        [message]="'Upload pictures'"
+        (imageFilesChange)="onImageFilesEvent($event)"
+      >
+      </molecule-image-input>
+    ---------------------------------------------------------------------------------------------------------
+      <app-votation-settings-card
+        [name]="'myInputRadioField'" [settingsValue]="'I'm selected'" [(selectedSettings)]="selectedObject"
+      >
+      </app-votation-settings-card>
+    ---------------------------------------------------------------------------------------------------------
+  */
+
+
   @Input('multiple') isMultiple:boolean=false;
-  @Input('inputStyle') inputStyle:string='';
+  @Input('inputStyle') inputStyle:string='fill';
   @Input('message') message:string='Subir imagen';
-  @Output() onChangeEvent=new EventEmitter();
+  @Input('imageFiles') imageFiles:File[]=[];
+  @Output() imageFilesChange=new EventEmitter();
   // public message!: string;
+
   title = 'dropzone';
-  files: File[] = [];
+  // files: File[] = [];
 
   constructor() { }
 
@@ -22,25 +74,25 @@ export class ImageInputMolecule implements OnInit {
 
   onSelect(event: any) {
     if(!this.isMultiple){
-      this.files=[];
+      this.imageFiles=[];
     }
 
     const formData = new FormData();
 
-    this.files.push(...event.addedFiles);
-    for (var i = 0; i < this.files.length; i++) {
-      formData.append('file[]', this.files[i]);
+    this.imageFiles.push(...event.addedFiles);
+    for (var i = 0; i < this.imageFiles.length; i++) {
+      formData.append('file[]', this.imageFiles[i]);
     }
-    this.onChangeEvent.emit(this.files);
+    this.imageFilesChange.emit(this.imageFiles);
   }
 
   onRemove(event: any) {
-    this.files.splice(this.files.indexOf(event), 1);
-    this.onChangeEvent.emit(this.files);
+    this.imageFiles.splice(this.imageFiles.indexOf(event), 1);
+    this.imageFilesChange.emit(this.imageFiles);
   }
   onRemoveFirstOne() {
-    this.files.splice(0, 1);
-    this.onChangeEvent.emit(this.files);
+    this.imageFiles.splice(0, 1);
+    this.imageFilesChange.emit(this.imageFiles);
   }
 
   
