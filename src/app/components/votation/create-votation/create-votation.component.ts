@@ -76,20 +76,16 @@ export class CreateVotationComponent implements OnInit {
     this.votations.create_by = '741a3044-061a-44c8-a2e8-7f5b27a66efd'
     this.votations.create_date = new Date()
 
-    let data = {
-      'image': this.fileToUpload[0],
-      'votations': this.votations
-    }
-
-    // await this.data.findByFilter('/votations', data).subscribe((res) => {
-    //   console.log(res);
-    // });
     const file: File = this.fileToUpload?.[0];
     var formData: any = new FormData();
     formData.append('file', file);
 
-    await this.data.findByFilter('/images/upload', formData).subscribe((res) => {
+    await this.data.findByFilter('/images/upload', formData).subscribe(async (res) => {
       console.log(res);
+      this.votations.photo = res?.url;
+      await this.data.findByFilter('/votations', this.votations).subscribe((res) => {
+        console.log(res);
+      });
     });
     
   }
