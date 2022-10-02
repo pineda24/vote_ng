@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@auth0/angular-jwt": "^5.0.2",
+    "bootstrap-icons": "^1.9.1",
     "chart.js": "^3.9.1",
     "jquery": "^3.6.1",
     "ngx-dropzone": "^3.1.0",

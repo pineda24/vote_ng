@@ -1,4 +1,9 @@
-<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveVotation()" novalidate>
+<form
+  name="form"
+  #f="ngForm"
+  (ngSubmit)="f.form.valid && saveVotation()"
+  novalidate
+>
   <h6>First, add the information of the votation:</h6>
   <section class="bg-container">
     <div class="row g-3">
@@ -43,18 +48,35 @@
   <h6 class="mt-4">Now, add the options for the votation:</h6>
   <section class="">
     <div class="row row-cols-2">
-      <ng-template ngFor let-option [ngForOf]="[1, 2, 3, 4]">
+      <app-create-option-card
+        [isRemovable]="false"
+        [optionObject]="firstVotationOption"
+      ></app-create-option-card>
+      <ng-template
+        ngFor
+        let-iOption
+        [ngForOf]="votationOptionsList"
+        [ngForTrackby]="iterable.trackByIdentity"
+      >
         <div class="col">
-          <app-create-option-card></app-create-option-card>
+          <app-create-option-card
+            [optionObject]="iOption"
+          ></app-create-option-card>
         </div>
       </ng-template>
+      <app-button-append-option-card></app-button-append-option-card>
     </div>
   </section>
 
-  <h6 class="mt-4">Now, add the options for the votation:</h6>
+  <h6 class="mt-4">It's almost there, add the settings for the votation:</h6>
   <section class="">
     <div class="row row-cols-2 row-cols-md-4 g-3">
-      <ng-template ngFor let-settings [ngForOf]="resultTypes">
+      <ng-template
+        ngFor
+        let-settings
+        [ngForOf]="resultTypes"
+        [ngForTrackby]="iterable.trackByIdentity"
+      >
         <div class="col">
           <app-votation-settings-card
             [settingsValue]="settings"
@@ -69,15 +91,9 @@
 
   <div class="mb-4 p-4"></div>
   <div class="d-flex justify-content-end gap-2 mt-3">
-    <button type="submit" class="btn btn-primary">
-        Guardar
-    </button>
-    <button
-        type="button"
-        class="btn btn-link"
-        [routerLink]="['../']"
-    >
-        Cancelar
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-link" [routerLink]="['../']">
+      Cancelar
     </button>
   </div>
 </form>

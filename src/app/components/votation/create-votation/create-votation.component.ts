@@ -2,7 +2,9 @@ import { HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Votations } from 'src/app/models/ votations.model';
 import { ResultTypes } from 'src/app/models/resultTypes.model';
+import { VotationOptions } from 'src/app/models/votationOptions.model';
 import { DataService } from 'src/app/services/data.service';
+import { IterableService } from 'src/app/services/iterable.service';
 
 class ImageSnippet {
   constructor(public src: string, public file: File) {}
@@ -19,12 +21,13 @@ export class CreateVotationComponent implements OnInit {
   imgURLs: any[] = [];
   resultTypes: Array<ResultTypes> = [];
   votations: Votations = new Votations();
-
-  // @ViewChild(‘fileInput’, { static: false })
- fileInput: ElementRef | undefined;
+  firstVotationOption: VotationOptions=new VotationOptions("0");
+  votationOptionsList: VotationOptions[]=[];
+  fileInput: ElementRef | undefined;
 
   constructor(
     private data: DataService,
+    private iterable: IterableService,
   ) {}
 
   ngOnInit(): void {
