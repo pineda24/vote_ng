@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import * as bootstrap from 'bootstrap';
 import { VotationOptions } from 'src/app/models/votationOptions.model';
 
 @Component({
@@ -7,16 +8,17 @@ import { VotationOptions } from 'src/app/models/votationOptions.model';
   styleUrls: ['./button-append-option-card.component.css']
 })
 export class ButtonAppendOptionCardComponent implements OnInit {
-  @Input('optionObject') optionObject:VotationOptions=new VotationOptions();
-  @Input('isRemovable') isRemovable:boolean=true;
-  @Output('onRemoveEvent') onRemoveEvent:EventEmitter<any>=new EventEmitter();
-  constructor() { }
-
-  ngOnInit(): void {
+  @Output('addEvent') addEvent:EventEmitter<any>=new EventEmitter();
+  constructor() {
   }
 
-  onRemove(){
-    this.onRemoveEvent.emit(this.optionObject);
+  ngOnInit(): void {
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  }
+
+  onAddEvent(){
+    this.addEvent.emit();
   }
 
 }

@@ -1,12 +1,20 @@
-.option-card-container{
+.append-option-card-container{
     display: flex;
     position: relative;
     height: fit-content;
-    border-radius: 5.5rem 10px 10px 5.5rem;
-    /* overflow: hidden; */
-    border: 2px solid #ECECEC;
+    border-radius: 10px 50% 50% 50%;
+    padding: 0;
     margin-bottom: 1rem;
+    border: 2px solid #ECECEC;
     background-color: white;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    transform-origin: center;
+    transform: translate(18%) rotate(-45deg);
 }
 .option-card-content{
     padding: 0.75rem 1rem;
@@ -17,118 +25,20 @@
     width: 100%;
     border: none;
     outline: none;
-    border-radius: 2px;
 }
-.option-description{
-    font-size: 0.75rem;
-    /* overflow: hidden; */
-    font-size: 10px;
-    border-radius: 4px!important;
-    transition: all ease 0.2s;
-    background-color: rgba(217, 217, 217, 0.2);
-    padding: 0.5rem;
-    font-family: 'Poppins', sans-serif !important;
-}
-
-
-.option-title{
-    font-weight: 700;
-    font-size: 0.85rem;
-    margin-bottom: 0.25rem;
-}
-.option-title{
-    padding: 0rem 0.2rem;
-    margin-bottom: 1rem;
-    /* border: none; */
-    /* outline: none; */
-    background: none;
-    box-shadow: 0px 1px 0px 0px #D5EAEB;
-    color: #282626;
-    /* font-size: 1.25rem; */
-    /* font-weight: 700; */
-    transition: all ease 0.1s;
-}
-.option-title:focus{
-    outline: none;
-    border-radius: 4px;
-    background-color: rgba(217, 217, 217, 0.2);
-    box-shadow: 0px 2px 0px 0px #D5EAEB;
-}
-
-
 .option-card-image{
-    /* float: left; */
-    /* width: 130px; */
     aspect-ratio: 1;
-    height: 11rem;
-    min-width: 11rem;
-    /* object-fit: cover;
-    object-position: center; */
-    /* border-radius: 0px 0px 5.5rem 0px; */
-    /* overflow: hidden; */
-    border-top-right-radius: 0;
-    /* border: 2px solid #ECECEC; */
-    /* box-shadow: 0px 0px 0px 2px #ECECEC */
-}
-.image-dropzone{
-    /* margin-left: 1rem; */
-    /* width: 100%; */
-    /* min-width: 200px; */
-    /* height: 200px; */
-    /* background: rgb(198, 198, 198); */
+    overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
+    height: 11rem;
+    min-width: 11rem;
+    background: linear-gradient(45deg, rgba(151, 205, 255, 0.5) 0%, rgba(241, 248, 255, 0.2) 100%);
+    border-radius: 10px 50% 50% 50%;
 }
-.image-dropzone>*{
+.option-card-image>*{
     width: 100%;
     height: 100%;
-}
-.image-dropzone>molecule-image-input {
-    position: absolute;
-}
-.option-card-image ::ng-deep ngx-dropzone{
-    border: 2px dashed var(--color-4)!important;
-    border-radius: 50% 10px 50% 50%!important;
-}
-.option-card-image ::ng-deep .fill-component.image-input-container::after{
-    border-radius: 50% 0px 50% 50%!important;
-}
-
-.option-card-image  ::ng-deep ngx-dropzone atom-image-container {
-    border-radius: 50% 10px 50% 50%;
-    background-color: white;
-}
-
-.delete-button {
-    background-color: rgb(218, 71, 103);
-    color: white;
-    max-height: 50%;
-    max-width: 50%;
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 5px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    pointer-events: all;
-    /* top: 5px;
-    left: 5px; */
-    z-index: 100;
-    -webkit-mask-image: radial-gradient(circle at 100% 100%, transparent 0, transparent 5.5rem, black 5.5rem);
-    clip-path: polygon(0 0, 100% 0, 64% 13%, 31% 37%, 10% 69%, 0% 100%);
-    transition: 0.05s ease all;
-}
-.delete-button:hover{
-    transform: scale(1.05);
-    -webkit-mask-image: radial-gradient(circle at 100% 100%, transparent 0, transparent 5.4rem, black 5.4rem);
-    background-color: rgb(237, 23, 69);
-}
-.delete-button:active{
-    transform: scale(1.05);
-    -webkit-mask-image: radial-gradient(circle at 100% 100%, transparent 0, transparent 5.4rem, black 5.4rem);
-    background-color: rgb(248, 120, 147);
-    box-shadow: inset 0px 0px 5px 0px rgb(126, 12, 12);
+    transform: rotate(45deg);
 }

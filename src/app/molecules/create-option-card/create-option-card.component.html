@@ -2,7 +2,7 @@
     <!-- <img class="option-card-image" src="/assets/icons/user.png" alt="Option picture."> -->
     <div class="option-card-image image-dropzone">
         <ng-template [ngIf]="isRemovable">
-            <button class="btn btn-danger delete-button" (onClick)="onRemove()">
+            <button class="btn btn-danger delete-button" type="button" (click)="onRemove()">
                 <i class="fa-regular fa-trash-can"></i>
             </button>
         </ng-template>

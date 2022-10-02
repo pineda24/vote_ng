@@ -57,14 +57,17 @@
         let-iOption
         [ngForOf]="votationOptionsList"
         [ngForTrackby]="iterable.trackByIdentity"
+        let-it="index"
       >
         <div class="col">
           <app-create-option-card
             [optionObject]="iOption"
+            (onRemoveEvent)="removeVotationOptionEvent($event,it)"
           ></app-create-option-card>
         </div>
       </ng-template>
-      <app-button-append-option-card></app-button-append-option-card>
+      <app-button-append-option-card (addEvent)="addVotationOptionEvent()">
+      </app-button-append-option-card>
     </div>
   </section>
 
@@ -81,7 +84,7 @@
           <app-votation-settings-card
             [settingsValue]="settings"
             [(selectedSettings)]="selectedSettings"
-            (selectedSettingsChange)="testBinding($event)"
+            (selectedSettingsChange)="selectedSettingsChangeEvent($event)"
             [resultType]="settings"
           ></app-votation-settings-card>
         </div>

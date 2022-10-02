@@ -34,24 +34,37 @@ export class CreateVotationComponent implements OnInit {
     this.getResultTypes();
   }
 
+  addVotationOptionEvent(){
+    const newVotationOption=new VotationOptions(`${this.votationOptionsList.length+1}`)
+    this.votationOptionsList.push(newVotationOption);
+  }
+
+  removeVotationOptionEvent(event:any, index?:number){
+    // console.log(event, index);
+    if(index){
+      this.votationOptionsList.splice(index,1);
+    }else if(event instanceof VotationOptions) {
+      this.votationOptionsList.splice(
+        this.votationOptionsList.indexOf(event), 1
+      );
+    }
+  }
+
+  selectedSettingsChangeEvent(event: any) {
+    // console.log("YEY: ", this.selectedSettings);
+  }
+
   handleFileInput(files: File[]) {
     this.fileToUpload = files;
-    this.getImgURLs();
-    // console.log(this.fileToUpload[0]);
   }
 
   existFiles: boolean = false;
   imageChangeEvent(files: File[]) {
-    // console.log(files[0].stream)
     if (files.length > 0) {
       this.existFiles = true;
     } else {
       this.existFiles = false;
     }
-  }
-
-  testBinding(event: any) {
-    // console.log("YEY: ", this.selectedSettings);
   }
 
   async getResultTypes() {
@@ -92,50 +105,4 @@ export class CreateVotationComponent implements OnInit {
     });
     
   }
-
-  // async attachFile(event: any) {
-  //   const file: File = event.target.files?.[0];
-  //   console.log(file)
-  //   var formData: any = new FormData();
-  //   formData.append('file', file);
-  //   await this.data.fileSend('/images/upload', formData).subscribe((res) => {
-  //     console.log(res);
-  //   });
-  // }
-  
-  
-  getImgURLs() {
-    if (this.fileToUpload.length === 0){
-      console.log("LENGHT < 0")
-      return;
-    }
-    this.imgURLs=[];
-    for(let i=0; i<this.fileToUpload.length; i++){
-      // console.log(this.files[i].type)
-      var mimeType = this.fileToUpload[i].type;
-      console.log("MIME TYPE: ", mimeType)
-      /* if (mimeType == null) {
-        // this.message = "Only images are supported.";
-        console.log("IS NOT AN IMAGE");
-        return;
-      } */
-      this.read(this.fileToUpload[i], (url: string | ArrayBuffer | null)=>this.addImgURL(url))
-    }
-  }
-  read(file:File, callback:any) {
-    var file = file;
-    var reader = new FileReader();
-  
-    reader.onload = function() {
-      callback(reader.result);
-    }
-  
-    reader.readAsDataURL(file);
-  }
-  addImgURL(url: string | ArrayBuffer | null){
-    if(url){
-      this.imgURLs.push(url)
-      console.log(this.imgURLs)
-    }
-  } 
 }

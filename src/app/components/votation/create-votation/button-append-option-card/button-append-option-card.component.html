@@ -1,25 +1,14 @@
-<div class="option-card-container">
-    <!-- <img class="option-card-image" src="/assets/icons/user.png" alt="Option picture."> -->
-    <div class="option-card-image image-dropzone">
-        <ng-template [ngIf]="isRemovable">
-            <button class="btn btn-danger delete-button" (onClick)="onRemove()">
-                <i class="fa-regular fa-trash-can"></i>
-            </button>
-        </ng-template>
-        <atom-image-container class="image-field">
-            <img
-            src="/assets/icons/user.png"
-            />
-        </atom-image-container>
-        <molecule-image-input
-            [multiple]="false"
-            [inputStyle]="'fill'"
-            [message]="'Upload related picture'"
-        >
-        </molecule-image-input>
-    </div>
-    <div class="option-card-content">
-        <input class="option-title" type="text" placeholder="Enter the option title...">
-        <textarea class="option-description" name="Description" id="" rows="6" placeholder="Enter the option description..." pInputTextarea [autoResize]="true"></textarea>
-    </div>
-</div>
+<button
+  class="append-option-card-container"
+  data-bs-toggle="tooltip"
+  data-bs-placement="right"
+  data-bs-title="Add one more option"
+  type="button"
+  (click)="onAddEvent()"
+>
+  <div class="option-card-image image-dropzone">
+    <atom-image-container class="image-field">
+      <img src="/assets/icons/plus2.png" />
+    </atom-image-container>
+  </div>
+</button>
