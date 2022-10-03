@@ -17,7 +17,7 @@
         <div class="option-card-footer">
             <div class="option-checkbox">
                 <p-checkbox [(ngModel)]="selectedOptions" [name]="'selectedOptions'" [value]="optionObject" checkboxIcon="fa-solid fa-check" (ngModelChange)="changeOption()" [disabled]="selectedOptions.length >= maxOptions && isSelected===false"></p-checkbox>
-                <label for="selectedOptions">
+                <label for="selectedOptions" class="label-checkbox">
                     {{isSelected===true?'CANCEL VOTE':'VOTE'}}
                 </label>
             </div>

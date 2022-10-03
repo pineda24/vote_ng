@@ -12,10 +12,12 @@ import { MoleculesModule } from 'src/app/molecules/molecules.module';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ChartModule } from 'primeng/chart';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { VotationCardComponent } from 'src/app/molecules/votation-card/votation-card.component';
 
 @NgModule({
   declarations: [
     VotationComponent,
+    VotationCardComponent,
     CreateVotationComponent,
     ButtonAppendOptionCardComponent,
     OptionCardComponent,
@@ -32,6 +34,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   ],
   exports: [
     VotationComponent,
+    VotationCardComponent,
     CreateVotationComponent,
     ButtonAppendOptionCardComponent,
     OptionCardComponent,

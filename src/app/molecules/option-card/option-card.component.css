@@ -2,21 +2,17 @@
     display: flex;
     position: relative;
     height: fit-content;
-    border-radius: 6rem 10px 10px 6rem;
+    border-radius: 5.5rem 10px 10px 5.5rem;
     overflow: hidden;
     border: 2px solid #ECECEC;
     margin-bottom: 1rem;
 }
 .option-card-image{
-    /* float: left; */
-    /* width: 130px; */
     aspect-ratio: 1;
     height: 11rem;
     object-fit: cover;
     object-position: center;
-    border-radius: 0px 0px 6rem 0px;
-    border-top-right-radius: 0;
-    /* border: 2px solid #ECECEC; */
+    border-radius: 0px 0px 5.5rem 0px;
     box-shadow: 0px 0px 0px 2px #ECECEC
 }
 .option-card-content{
@@ -98,4 +94,24 @@
 ::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
     border-color: #3B82F6;
     background: var(--color-4)!important;
+}
+
+:host:nth-child(2n) .option-card-container{
+    border-radius: 10px 5.5rem 5.5rem 10px;
+}
+:host:nth-child(2n) .option-card-image{
+    border-radius: 0px 0px 0px 5.5rem;
+}
+:host:nth-child(2n) .option-card-content{
+    order: -1;
+    text-align: end;
+}
+:host:nth-child(2n) .votations-votes-amount{
+    order: -1;
+}
+:host:nth-child(2n) .option-checkbox{
+    order: 2;
+}
+:host:nth-child(2n) .option-checkbox .label-checkbox{
+    order: -1;
 }

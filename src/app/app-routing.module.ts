@@ -15,7 +15,7 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: "my-votations",  canActivate: [SecurityGuard],component: HomeComponent },
-      { path: "home", canActivate: [SecurityGuard], component: HomeComponent },
+      { path: "home", component: HomeComponent },
       { path: "votations/create", component: CreateVotationComponent },
       { path: "votations/:id", component: VotationComponent },
     ],
