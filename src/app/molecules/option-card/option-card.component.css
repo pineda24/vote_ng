@@ -8,8 +8,8 @@
     margin-bottom: 1rem;
 }
 .option-card-image{
-    aspect-ratio: 1;
-    height: 11rem;
+    min-height: 100%;
+    min-width: 11rem;
     object-fit: cover;
     object-position: center;
     border-radius: 0px 0px 5.5rem 0px;
@@ -37,23 +37,17 @@
     transition: all ease 0.2s;
 }
 .button-display-more{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1.5rem;
     border-radius: 4px;
-    cursor: pointer;
+    /* cursor: pointer; */
     border: none;
-    background: none;
-    width: 100%;
+    background-color: transparent;
     margin-bottom: calc(22px + 0.5rem);
-}
-.button-display-more svg{
     transition: all ease 0.2s;
+    text-align: inherit;
 }
 .button-display-more:hover {
+    background: rgb(244, 244, 244);
     box-shadow: 0px 1px 1px 1px #ECECEC;
-    /* background-color: #f1fcff; */
 }
 .button-display-more:focus-visible {
     border: none;
@@ -64,6 +58,33 @@
     transform: scale(1.05) translateY(1px);
     transform-origin: center;
 }
+.icon-display-more{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    /* margin-bottom: calc(22px + 0.5rem); */
+}
+/* .icon-display-more svg{
+    transition: all ease 0.2s;
+}
+.icon-display-more:hover {
+    box-shadow: 0px 1px 1px 1px #ECECEC;
+}
+.icon-display-more:focus-visible {
+    border: none;
+    outline: none;
+    box-shadow: inset 0px 0px 1px 1px #b6b6b6;
+}
+.icon-display-more:hover svg{
+    transform: scale(1.05) translateY(1px);
+    transform-origin: center;
+} */
 .option-card-footer{
     display: flex;
     justify-content: space-between;
@@ -81,6 +102,13 @@
     justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
+}
+.votation-votes-amount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 5px;
+    gap: 5px;
 }
 ::ng-deep .p-checkbox,
 ::ng-deep .p-checkbox .p-checkbox-box {
@@ -106,7 +134,7 @@
     order: -1;
     text-align: end;
 }
-:host:nth-child(2n) .votations-votes-amount{
+:host:nth-child(2n) .votation-votes-amount{
     order: -1;
 }
 :host:nth-child(2n) .option-checkbox{
