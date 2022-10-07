@@ -74,4 +74,9 @@ export class VotationComponent implements OnInit {
     };
   }
 
+  
+  toogleDisplayDescription(textDescription: HTMLElement) {
+    console.log(textDescription);
+    textDescription.classList.toggle('display-cutted');
+  }
 }
